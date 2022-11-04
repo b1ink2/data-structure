@@ -21,6 +21,7 @@ public class Stack {
     }
 
     public Object Peak() {
+        // 返回栈顶元素
         if (!isEmpty())
             return stackELem[top - 1];
         else
@@ -28,6 +29,7 @@ public class Stack {
     }
 
     public void Push(Object x) throws Exception {
+        //压入栈
         if (top == stackELem.length)
             throw new Exception("Stack Over Flow");
         else
@@ -35,6 +37,7 @@ public class Stack {
     }
 
     public Object Pop() {
+        //弹出
         if (isEmpty())
             return null;
         else
