@@ -1,3 +1,4 @@
+package test7;
 
 public class NodeQueue implements IQueue{
     private Node front;

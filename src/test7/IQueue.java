@@ -1,3 +1,5 @@
+package test7;
+
 public interface IQueue {
     public void clear();
 

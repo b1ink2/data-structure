@@ -1,7 +1,8 @@
+package test5;
 
 public class NodeList {
     private Object data;
-    private NodeList next;
+    private Node next;
 
     public NodeList() {
         this.data = null;
@@ -13,10 +14,9 @@ public class NodeList {
         this.next = null;
     }
 
-    public NodeList(Integer data, NodeList nodeList) {
+    public NodeList(Integer data, Node nodeList) {
         this.data = data;
-        this.next = nodeList;
-    }
+        this.next = node;
 
     public void clear() {
         this.data = null;
@@ -73,24 +73,24 @@ public class NodeList {
     public void remove(int i) throws Exception {
         NodeList p = this.next;
         int j = 0;
-        while(!p.isEmpty() && j<i) {
+        while (!p.isEmpty() && j < i) {
             p = p.next;
             ++j;
         }
-        if (j>i || p.isEmpty()) {
+        if (j > i || p.isEmpty()) {
             throw new Exception("删除位置错误");
         }
-        p.next=p.next.next;
+        p.next = p.next.next;
     }
 
     public int indexOf(Object x) {
         NodeList p = this.next;
-        int j=0;
-        while(!p.isEmpty()&&!p.data.equals(x)) {
-            p=p.next;
+        int j = 0;
+        while (!p.isEmpty() && !p.data.equals(x)) {
+            p = p.next;
             ++j;
         }
-        if(!p.isEmpty())
+        if (!p.isEmpty())
             return j;
         else
             return -1;

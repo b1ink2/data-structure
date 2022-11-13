@@ -1,6 +1,6 @@
 package test8;
 
-public class SeqString implements IString {
+public class SeqString {
     private char[] strvalue;
     private int curlen;
     
@@ -35,7 +35,7 @@ public class SeqString implements IString {
         return curlen;
     }
     
-    public char charAt(int index) {
+    public char[] charAt(int index) {
         if ((index<0) || (index>=curlen)) {
             throw new StringIndexOutOfBoundsException(index);
         }
@@ -45,7 +45,7 @@ public class SeqString implements IString {
     public void allocate(int newCapacity) {
         char[] temp = strvalue;
         strvalue = new char[newCapacity];
-        for (int i=0; i<temp; i++) {
+        for (int i=0; i<temp.length; i++) {
             strvalue[i] = temp[i];
         }
     }
