@@ -7,9 +7,8 @@ public interface IString {
 
     public int length();
 
-    public char charAt(int index);
-
-    public IString subString(int begin, int end);
+    public char charAt(innt index);
+     public IString subString(int begin, int end);
 
     public IString delete(int begin, int end);
 
