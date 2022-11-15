@@ -5,11 +5,11 @@ public class Node {
     public Node next;
     
     public Node() {
-        Node(null, null);
+        this(null, null);
     }
-    
+
     public Node(Object data) {
-        Node(data, null);
+        this(data,null);
     }
     
     public Node(Object data, Node next) {
