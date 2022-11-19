@@ -1,3 +1,5 @@
+package test7;
+
 public class SqQueue implements IQueue {
     private Object[] queueElem;
     private int front;

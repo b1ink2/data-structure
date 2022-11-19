@@ -1,3 +1,5 @@
+package test7;
+
 public class Node {
     public Object data;
     public Node next;

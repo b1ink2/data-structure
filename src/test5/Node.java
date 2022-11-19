@@ -1,13 +1,15 @@
+package test5;
+
 public class Node {
     public Object data;
     public Node next;
     
-    public Node(){
-        Node(null, null);
+    public Node() {
+        this(null, null);
     }
-    
-    public Node(Object data){
-        Node(data, null);
+
+    public Node(Object data) {
+        this(data,null);
     }
     
     public Node(Object data, Node next) {
