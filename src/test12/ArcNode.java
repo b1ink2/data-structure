@@ -1,4 +1,4 @@
-package test13;
+package test12;
 
 public class ArcNode {
     public int adjVex;
@@ -8,11 +8,11 @@ public class ArcNode {
     public ArcNode() {
         this(-1, 0, null);
     }
-    
+
     public ArcNode(int adjVex, int value) {
         this(adjVex, value, null);
     }
-    
+
     public ArcNode(int adjVex, int value, ArcNode nextNode) {
         this.value = value;
         this.adjVex = adjVex;

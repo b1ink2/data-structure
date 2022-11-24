@@ -1,18 +1,23 @@
-package test13;
+package test12;
 
 public class VNode {
     public Object data;
     public ArcNode firstArc;
+
     public VNode() {
-        this(null,null);
+        this(null, null);
     }
-    
+
     public VNode(Object data) {
-        this(data,null);
+        this(data, null);
     }
-    
+
     public VNode(Object data, ArcNode firstArc) {
         this.data = data;
         this.firstArc = firstArc;
-    }   
+    }
+
+    public Object getData() {
+        return data;
+    }
 }

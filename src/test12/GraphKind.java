@@ -1,4 +1,4 @@
-package test13;
+package test12;
 
 public enum GraphKind {
     UDG,
