@@ -1,6 +1,6 @@
 package test7;
 
-public class SqQueue implements IQueue {
+public class SqQueue {
     private Object[] queueElem;
     private int front;
     private int rear;
@@ -11,32 +11,27 @@ public class SqQueue implements IQueue {
         this.queueElem = new Object[size];
     }
 
-    @Override
     public void clear() {
         front = 0;
         rear = 0;
     }
 
-    @Override
     public boolean isEmpty() {
         return front == rear;
     }
 
-    @Override
     public int length() {
         int l = (rear - front + queueElem.length) % queueElem.length;
         return l;
     }
 
-    @Override
-    public Object peek() {
+    public Object peak() {
         if (front == rear)
             return null;
         else
             return queueElem[front];
     }
 
-    @Override
     public void offer(Object x) throws Exception {
         if ((rear + 1) % queueElem.length == front)
             throw new Exception("queue over flow");
@@ -47,7 +42,6 @@ public class SqQueue implements IQueue {
 
     }
 
-    @Override
     public Object poll() {
         if (front == rear)
             return null;
@@ -55,6 +49,12 @@ public class SqQueue implements IQueue {
             Object x = queueElem[front];
             front = (front + 1) % queueElem.length;
             return x;
+        }
+    }
+
+    public void display() {
+        for (Object object : queueElem) {
+            System.out.print(object+" ");
         }
     }
 }

@@ -1,6 +1,6 @@
 package test7;
 
-public class NodeQueue implements IQueue{
+public class NodeQueue{
     private Node front;
     private Node rear;
     
@@ -28,7 +28,7 @@ public class NodeQueue implements IQueue{
         return length;
     }
     
-    public Objectj peak() {
+    public Object peak() {
         if (front != null)
             return front.data;
         else
@@ -52,7 +52,7 @@ public class NodeQueue implements IQueue{
             front = front.next;
             if (p == rear) 
                 rear = null;
-            return p;
+            return p.data;
         } else {
             return null;
         }
