@@ -33,16 +33,18 @@ public class NodeList {
     }
 
     public void create1(int n) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        for (int j = 0; j < n; j++) {
-            insert(j, sc.next());
+        try (Scanner sc = new Scanner(System.in)) {
+            for (int j = 0; j < n; j++) {
+                insert(j, sc.next());
+            }
         }
     }
 
     public void create2(int n) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        for (int j = 0; j < n; j++) {
-            insert(length(), sc.next());
+        try (Scanner sc = new Scanner(System.in)) {
+            for (int j = 0; j < n; j++) {
+                insert(length(), sc.next());
+            }
         }
     }
 

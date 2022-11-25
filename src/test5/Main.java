@@ -38,22 +38,23 @@ public class Main {
     }
 
     public static void supplement5_2() throws Exception {
-        Scanner sc = new Scanner(System.in);
-        int m = 0, n = 0;
+        try (Scanner sc = new Scanner(System.in)) {
+            int m = 0, n = 0;
 
-        System.out.println("请输入LA中结点的个数:");
-        m = sc.nextInt();
+            System.out.println("请输入LA中结点的个数:");
+            m = sc.nextInt();
 
-        System.out.println("请按非递减的方式输入" + "m" + "个数字：");
-        NodeList LA = new NodeList(m, true);
-        System.out.println("请输入LB中结点的个数:");
-        n = sc.nextInt();
+            System.out.println("请按非递减的方式输入" + "m" + "个数字：");
+            NodeList LA = new NodeList(m, true);
+            System.out.println("请输入LB中结点的个数:");
+            n = sc.nextInt();
 
-        System.out.println("请按非递减的方式输入" + n + "个数字：");
-        NodeList LB = new NodeList(n, true);
-        System.out.println("将单链表LA和LB归并后,新的单链表LA中的各个数据元素:");
+            System.out.println("请按非递减的方式输入" + n + "个数字：");
+            NodeList LB = new NodeList(n, true);
+            System.out.println("将单链表LA和LB归并后,新的单链表LA中的各个数据元素:");
 
-        mergeList(LA, LB).display();
+            mergeList(LA, LB).display();
+        }
     }
 
     private static NodeList mergeList(NodeList LA, NodeList LB) {

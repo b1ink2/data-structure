@@ -14,5 +14,9 @@ public class VNode {
     public VNode(Object data, ArcNode firstArc) {
         this.data = data;
         this.firstArc = firstArc;
+    }
+
+    public Object getData() {
+        return null;
     }   
 }

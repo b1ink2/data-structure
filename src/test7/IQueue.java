@@ -7,7 +7,7 @@ public interface IQueue {
 
     public int length();
 
-    public Object peek();
+    public Object peak();
 
     public void offer(Object x) throws Exception;
 
