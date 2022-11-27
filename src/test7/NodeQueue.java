@@ -1,24 +1,32 @@
 package test7;
 
 public class NodeQueue{
-    private Node front;
-    private Node rear;
+    private Node front; // 队首元素
+    private Node rear; // 队尾元素
     
+    // 构造器
     public NodeQueue() {
         this.front = null;
         this.rear = null;
     }
     
+    // 清空队列
     public void clear() {
         this.front = null;
         this.rear = null;
     }
     
+    // 判断是否为空
     public boolean isEmpty() {
         return front == rear;
     }
     
+    // 返回长度
     public int length() {
+        /* 
+         * 遍历队列所有元素
+         * 每遍历一个计数器就加一
+         */
         Node p = front;
         int length = 0;
         while (p != null) {
@@ -28,6 +36,7 @@ public class NodeQueue{
         return length;
     }
     
+    // 返回队尾元素
     public Object peak() {
         if (front != null)
             return front.data;
@@ -35,6 +44,7 @@ public class NodeQueue{
             return null;
     }
     
+    // 入队
     public void offer(Object x) {
         Node p = new Node(x);
         if (front != null) {
@@ -46,6 +56,7 @@ public class NodeQueue{
         }
     }
     
+    // 出队
     public Object poll() {
         if (front != null) {
             Node p = front;

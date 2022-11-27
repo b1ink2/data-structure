@@ -4,17 +4,20 @@ public class SeqString {
     private char[] strvalue;
     private int curlen;
 
+    // 无参构造
     public SeqString() {
         strvalue = new char[0];
         curlen = 0;
     }
 
+    // 以字符串构造
     public SeqString(String str) {
         char[] tempchararray = str.toCharArray();
         strvalue = tempchararray;
         curlen = tempchararray.length;
     }
 
+    // 以字符数组构造
     public SeqString(char[] value) {
         this.strvalue = new char[value.length];
         for (int i = 0; i < value.length; i++) {
@@ -36,11 +39,16 @@ public class SeqString {
     }
 
     public char charAt(int index) {
+        /* 
+         * 返回字符串数组的索引位置的字符
+         * 需要判断索引位置是否合法
+         */
         if ((index < 0) || (index >= curlen)) {
             throw new StringIndexOutOfBoundsException(index);
         }
         return strvalue[index];
     }
+
 
     public void allocate(int newCapacity) {
         char[] temp = strvalue;
@@ -50,6 +58,7 @@ public class SeqString {
         }
     }
 
+    // 截取字符串
     public SeqString subString(int begin, int end) {
         if (begin < 0) {
             throw new StringIndexOutOfBoundsException("起始位置小于0");
@@ -72,6 +81,10 @@ public class SeqString {
     }
 
     public SeqString insert(int offset, SeqString str) {
+        /* 
+         * 先将要插入新元素的位置上的元素后移插入串长度的位置
+         * 然后将串插入
+         */
         if ((offset < 0) || (offset > this.curlen)) {
             throw new StringIndexOutOfBoundsException("插入位置不合法");
         }
@@ -94,6 +107,11 @@ public class SeqString {
     }
 
     public SeqString delete(int begin, int end) {
+        /* 
+         * 判断起点和末尾索引是否合法
+         * 若都合法则将末尾索引后面的内容依次提前
+         * 再将列表挡墙长度修改
+         */
         if (begin < 0) {
             throw new StringIndexOutOfBoundsException("起始位置小于0");
         }
@@ -111,10 +129,17 @@ public class SeqString {
     }
 
     public SeqString concat(SeqString str) {
+        /* 
+         * 合并串的合并相当于在末尾插入新的串
+         */
         return insert(curlen, str);
     }
 
     public int compareTo(SeqString str) {
+        /* 
+         * 通过依次遍历比较字符是否相等
+         * 从而判断串是否相等
+         */
         int len1 = this.curlen;
         int len2 = str.curlen;
         int n = Math.min(len1, len2);
@@ -133,6 +158,11 @@ public class SeqString {
     }
 
     public int indexOf(SeqString str, int begin) {
+        /* 
+         * 先通过对比是否有字串相等
+         * 若有则返回字串起始索引
+         * 否则返回-1
+         */
         if (begin > 0) {
             int n = this.curlen;
             int m = str.curlen;

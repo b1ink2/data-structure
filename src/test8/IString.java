@@ -7,14 +7,15 @@ public interface IString {
 
     public int length();
 
-    public char charAt(int index);
-    public IString subString(int begin, int end);
+    public char charAt(int index); //返回串中元素
 
-    public IString delete(int begin, int end);
+    public IString subString(int begin, int end); //截取子串
 
-    public IString concat(IString str);
+    public IString delete(int begin, int end); //删除
 
-    public int compareTo(IString str);
+    public IString concat(IString str); //连接串
 
-    public int indexOf(IString str, int begin);
+    public int compareTo(IString str); //串的比较
+
+    public int indexOf(IString str, int begin); //字串定位
 }

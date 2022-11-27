@@ -2,7 +2,7 @@ package test7;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        makePrimeCircle(70);
+        makePrimeCircle(20);
     }
 
     public static void makePrimeCircle(Integer n) throws Exception {
